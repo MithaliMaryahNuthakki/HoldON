@@ -1,0 +1,290 @@
+
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="icon" href="{{url_for('static', filename='images/logo.png')}}" type="png" sizes="16x16">
+    <link  rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/CSS.css') }}">
+    <title>HOLD ON-helpine </title>
+
+    <style >
+      body{background-color: white;}
+    </style>
+
+	<script src="https://use.fontawesome.com/26ab819582.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-icon-top navbar-expand-lg  bg-dark">
+      <a class="navbar-brand navbar-name" href="/"><img src="{{url_for('static', filename='images/logo.png')}}" height="90" width="90">
+      HOLD ON </a>
+      <button class="navbar-toggler toggles" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> ---
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link nav-links " href="{{url_for('gettoknow') }}">
+              <i class="fa fa-info-circle"></i> Get To Know
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-links " href="{{url_for('helpline') }}">
+              <i class="fa fa-anchor" aria-hidden="true"></i> Helpline
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle nav-links" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-bar-chart" aria-hidden="true"></i> Statistics
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{url_for('mentalhealth') }}"><i class="fa fa-users" aria-hidden="true"></i> People Affected By Depression</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{{url_for('suicideanalysis') }}"><i class="fa fa-users" aria-hidden="true"></i> People commiting Suicides</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav ">
+
+          <li class="nav-item">
+            <button type="button" class="btn btn-screening btn-grad" onclick="document.location='{{url_for('screening') }}'">Depression Screening</button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-screening btn-grad" onclick="document.location='{{url_for('analysis') }}'">Sentiment Analysis</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<div class="gettoknow">
+    <div class='about-display'>
+
+      <div class='about-depression-content'>
+        <p class='about-depression' >Depression is a state of unhealthy mood. It may be described as feelings of sadness, loss, or anger that interfere with a person’s everyday activities. Each person experiences depression in different ways.<br>It may affect your daily work, resulting in loss of time and lower productivity. It can also influence relationships and some chronic health conditions.
+        </p>
+      </div>
+
+      <div class='about-symptoms-content'>
+        <div class="row">
+          <div class="column about-symp-left">
+            <h2 class='about-symptoms-title'>Symptoms of depression</h2>
+            <ul class='about-symptoms'>
+              <li>Mood, such as anger, irritability, anxiousness, restlessness</li>
+              <li>Behavior, such as loss of interest, finding no pleasure in favorite activities, feeling tired often, thoughts of suicide
+                </li>
+              <li>Emotional well-being, such as feeling empty, sad, hopeless</li>
+              <li>Sleep patterns change, such as insomnia, restless sleep, excessive sleepiness</li>
+              <li>Cognitive abilities, such as lack of concentration, difficulty in completing tasks, delayed responses during conversations
+                </li>
+              <li>Sexual interest changes, such as reduced sexual desire, lack of sexual performance</li>
+              <li>Physical well-being, such as fatigue, pains, headache, digestive problems</li>
+            </ul>
+          </div>
+          <div class="column about-symp-right">
+            <img class='about-symp-image' src="{{url_for('static', filename='images/gettoknow/about8.jpg')}}" style="width:100%" class="center">
+          </div>
+        </div>
+      </div>
+
+      <div class='about-causes-content'>
+        <h2 class='about-causes-title'>Causes of depression</h2>
+        <p class='about-causes'> <span class='about-causes-content1'>These</span> are some of the common reasons for depression. Having these symptoms rarely is totally common and is easy to overcome. But if the symptoms pursue and affect your daily life it is considered as depression.</p>
+        <ul class='about-causes-points'>
+          <li>Family history. You’re at a greater risk for developing depression if you have a family history of depression or another mood disorder.</li>
+          <li>Early childhood trauma. Some events of your early ages may affect the way your body reacts to fear and stressful situations.  </li>
+          <li>Medical conditions. Certain conditions may put you at higher risk, such as chronic illness, insomnia, chronic pain</li>
+          <li>Drug use. A history of drug or alcohol misuse can affect your risk.</li>
+          <li>Brain structure. There’s a higher risk for depression if the frontal lobe of your brain is less active. However, scientists still don’t know if this happens before or after the onset of depressive symptoms.</li>
+        </ul>
+      </div>
+
+      <div class='about-phase2'>
+        <h1 class='about-title'> Myths & Facts</h1><br>
+      </div>
+
+      <div class='about-phase1'>
+        <p>Depression affects nearly one in six people at some point in their lives. Eventhough, many myths and misconceptions about it persist.</p>
+      </div>
+
+      <div class='myths-facts'>
+        <div class='about-phase3  about-phase3-left'>
+          <div class="row">
+            <div class="column" style="width: 35%;">
+              <div class='myth-fact-images'>
+                <img class='myth-fact-image' src="{{url_for('static', filename='images/gettoknow/About1.jpg')}}" style="width:100%">
+              </div>
+            </div>
+            <div class="column" style="width: 65%;">
+              <div class='myth-fact-content'>
+                <dl>
+                  <dt class='myth-title'>Myth :</dt>
+                  <dd>Depression is same as feeling sad or grief.</dd>
+                  <dt class='fact-title'>Fact  :</dt>
+                  <dd> Depression is serious than it. It is a complex mental illness that can cause disability and may lead to change their lifestyle. It is also can be treated if done properly.</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='about-phase3 about-phase3-right'>
+          <div class="row">
+            <div class="column" style="width: 65%;">
+              <div class='myth-fact-content'>
+                <dl>
+                  <dt class='myth-title'>Myth :</dt>
+                  <dd>Depression occurs due to a sad situation.</dd>
+                  <dt class='fact-title'>Fact  :</dt>
+                  <dd> Some sad thoughts, unhappy moments or bad past can cause depression. But it is not the only reason for depression and depression is not always caused by  negative incidents. There are many more reasons for stress and depression.</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="column" style="width: 35%;">
+              <div class='myth-fact-images' >
+                <img class='myth-fact-image' src="{{url_for('static', filename='images/gettoknow/About2.jpg')}}" style="width:100%">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='about-phase3 about-phase3-left'>
+          <div class="row">
+            <div class="column" style="width: 35%;">
+              <div class='myth-fact-images'>
+                <img class='myth-fact-image' src="{{url_for('static', filename='images/gettoknow/About3.jpg')}}" style="width:100%">
+              </div>
+            </div>
+            <div class="column" style="width: 65%;">
+              <div class='myth-fact-content'>
+                <dl>
+                  <dt class='myth-title'>Myth :</dt>
+                  <dd>Depression affects everyone in the same way.</dd>
+                  <dt class='fact-title'>Fact  :</dt>
+                  <dd> Depression affects different people in different ways. The symptoms are always not same. For example, some may be over aggressive and some may keep quiet always.</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='about-phase3 about-phase3-right'>
+          <div class="row">
+            <div class="column" style="width: 65%;">
+              <div class='myth-fact-content'>
+                <dl>
+                  <dt class='myth-title'>Myth :</dt>
+                  <dd>Depression only affects persons who go for job.</dd>
+                  <dt class='fact-title'>Fact  :</dt>
+                  <dd> This is simply untrue. People who works commonly report symptoms of depression but it can affect others also. As there are several reasons, anything can affect people to get depressed. That's why it's important to get help.</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="column" style="width: 35%;">
+              <div class='myth-fact-images'>
+                <img class='myth-fact-image' src="{{url_for('static', filename='images/gettoknow/About4.jpg')}}" style="width:100%">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='about-phase3 about-phase3-left'>
+          <div class="row">
+            <div class="column" style="width: 35%;">
+              <div class='myth-fact-images'>
+                <img class='myth-fact-image' src="{{url_for('static', filename='images/gettoknow/About5.jpg')}}" style="width:100%">
+              </div>
+            </div>
+            <div class="column" style="width: 65%;">
+              <div class='myth-fact-content'>
+                <dl>
+                  <dt class='myth-title'>Myth :</dt>
+                  <dd>Talking about it only makes things worse.</dd>
+                  <dt class='fact-title'>Fact  :</dt>
+                  <dd> It's common misconception that discussing depression reinforces destructive feeling and make you to have negative moods and situations. In reality, being alone with your thoughts is more harmful. Talking about it to trusty people may help seek supports and get relief.</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='about-phase3 about-phase3-right'>
+          <div class="row">
+            <div class="column" style="width: 65%;">
+              <div class='myth-fact-content'>
+                <dl>
+                  <dt class='myth-title'>Myth :</dt>
+                  <dd>If a person attempts suicide and survives, they will never make a further attempt.</dd>
+                  <dt class='fact-title'>Fact  :</dt>
+                  <dd>A suicide attempt is regarded as an indicator of further attempts. It is likely that the level of danger will increase with each further suicide attempt. So it's important to have a consult and overcome those thoughts. </dd>
+                </dl>
+              </div>
+            </div>
+            <div class="column" style="width: 35%;">
+              <div class='myth-fact-images'>
+                <img class='myth-fact-image' src="{{url_for('static', filename='images/gettoknow/About6.jpg')}}" style="width:100%">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='about-phase3 about-phase3-left'>
+          <div class="row">
+            <div class="column" style="width: 35%;">
+              <div class='myth-fact-images'>
+                <img class='myth-fact-image' src="{{url_for('static', filename='images/gettoknow/About7.jpg')}}" style="width:100%">
+              </div>
+            </div>
+            <div class="column" style="width: 65%;">
+              <div class='myth-fact-content'>
+                <dl>
+                  <dt class='myth-title'>Myth :</dt>
+                  <dd>Once a young person have a suicidal thought, they will forever have it.</dd>
+                  <dt class='fact-title'>Fact  :</dt>
+                  <dd>Most young people who are considering suicide will only be that way for a limited period of their lives. Given proper assistance and support, they will probably recover and continue to lead meaningful and happy lives unhindered by suicidal concerns. </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+    </div>
+</div>
+
+    <footer class="footer">
+      <div class="footer-btn-block">
+        <a href="/" class="footer-buttons" role="button"><i class="fa fa-home"></i> Home</a>&ensp;
+        <a href="{{url_for('gettoknow') }}" class="footer-buttons" role="button"><i class="fa fa-info-circle"></i> Get To Know</a>&ensp;
+        <a href="{{url_for('helpline') }}" class="footer-buttons" role="button"><i class="fa fa-anchor" aria-hidden="true"></i> Helpline</a>&ensp;
+      </div>
+
+      <img class="footer-image" src="{{url_for('static', filename='images/footerimage.jpg')}}">
+
+      <div class="copyright">
+          <p>&#169; Made by: <br>
+            <a href="https://www.linkedin.com/in/nuthakki-mithali-maryah-b254a1194" class="linkedin">Mithali Maryah</a><br>
+            <a href="https://www.linkedin.com/in/kalaipriya-balamurugan-0564841b4/" class="linkedin">Kalaipriya</a><br>
+            <a href="https://www.linkedin.com/in/sowmiya-veerapathiran-3182131ab"  class="linkedin">Sowmiya</a>
+          </p>
+      </div>
+    </div>
+
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

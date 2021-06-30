@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <link rel="icon" href="{{url_for('static', filename='images/logo.png')}}" type="png" sizes="16x16">
+    <link  rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/CSS.css') }}">
+    <title> Sentimental Analysis</title>
+    <style>
+    body{
+       background-image: url('data:image/jpeg;base64,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');
+       background-repeat: no-repeat;
+       -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-icon-top navbar-expand-lg  bg-dark">
+      <a class="navbar-brand navbar-name" href="/"><img src="{{url_for('static', filename='images/logo.png')}}" height="90" width="90">
+      HOLD ON </a>
+      <button class="navbar-toggler toggles" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> ---
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link nav-links " href="{{url_for('gettoknow') }}">
+              <i class="fa fa-info-circle"></i> Get to Know
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-links " href="{{url_for('helpline') }}">
+              <i class="fa fa-anchor" aria-hidden="true"></i> Helpline
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle nav-links" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-bar-chart" aria-hidden="true"></i> Statistics
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{url_for('mentalhealth') }}"><i class="fa fa-users" aria-hidden="true"></i> People Affected By Depression</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{{url_for('suicideanalysis') }}"><i class="fa fa-users" aria-hidden="true"></i> People commiting Suicides</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav " >
+
+          <li class="nav-item">
+            <button  type="button" class="btn btn-screening btn-grad" onclick="document.location='{{url_for('screening') }}'">Depression Screening</button>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <h1 class="analysis-title">SENTIMENT ANALYSIS</h1>
+    <div class="sa-wrapper">
+        <form method="POST" class="form " id="sbt" >
+            <label class="sa-label">Enter how you are feeling in less than 1000 words, click on submit,then proceed to check your result by clicking on result.</label>
+            <textarea  class="form-control sa-textarea" type="text" name="inp" placeholder=".." id="inp" maxlength="1000" rows="10" cols="40" ></textarea>
+            <input  type="submit" name="submit" id="btn" class="btn sa-btn-grad sa-sbmt-btn" onclick="myFunction()">
+            <button type="button" class="sa-btn-grad " data-toggle="modal" data-target="#exampleModalLong">
+              View result
+            </button>
+        </form>
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="sa-message" >
+
+            <h3 class="output">{{message}}{{mood}}</h3>
+            <hr/>
+            <p>{{thank}}</p>
+            <p>Just to be sure and more clear you can take our Depression Screening Test</p>
+            <button  type="button" class="btn sa-btn-grad  sa-screening-btn" onclick="document.location='{{url_for('screening') }}'">Depression Screening</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <footer class="footer">
+      <div class="footer-btn-block">
+        <a href="/" class="footer-buttons" role="button"><i class="fa fa-home"></i> Home</a>&ensp;
+        <a href="{{url_for('gettoknow') }}" class="footer-buttons" role="button"><i class="fa fa-info-circle"></i> Get To Know</a>&ensp;
+        <a href="{{url_for('helpline') }}" class="footer-buttons" role="button"><i class="fa fa-anchor" aria-hidden="true"></i> Helpline</a>&ensp;
+      </div>
+
+      <img class="footer-image" src="{{url_for('static', filename='images/footerimage.jpg')}}">
+
+      <div class="copyright">
+          <p>&#169; Made by: <br>
+            <a href="https://www.linkedin.com/in/nuthakki-mithali-maryah-b254a1194" class="linkedin">Mithali Maryah</a><br>
+            <a href="https://www.linkedin.com/in/kalaipriya-balamurugan-0564841b4/" class="linkedin">Kalaipriya</a><br>
+            <a href="https://www.linkedin.com/in/sowmiya-veerapathiran-3182131ab"  class="linkedin">Sowmiya</a>
+          </p>
+      </div>
+
+
+
+    </footer>
+    <script>
+function myFunction() {
+  alert("Your thoughts have been evaluated please click on the result button to check it out.");
+}
+</script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

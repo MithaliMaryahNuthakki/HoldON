@@ -1,0 +1,159 @@
+
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+   <link rel="icon" href="{{url_for('static', filename='images/logo.png')}}" type="png" sizes="16x16">
+   <link  rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/CSS.css') }}">
+    <title>HOLD ON-Mental Health Statistics </title>
+    <style >
+      body{background-color: grey;}
+    </style>
+
+	<script src="https://use.fontawesome.com/26ab819582.js"></script>
+
+  </head>
+
+  <body>
+    <!--------------------------- NAV BAR ------------------------>
+    <nav class="navbar navbar-icon-top navbar-expand-lg  bg-dark">
+      <a class="navbar-brand navbar-name" href="/"><img src="{{url_for('static', filename='images/logo.png')}}" height="90" width="90">
+      HOLD ON </a>
+      <button class="navbar-toggler toggles" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> ---
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link nav-links " href="{{url_for('gettoknow') }}">
+              <i class="fa fa-info-circle"></i> Get To Know
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-links " href="{{url_for('helpline') }}">
+              <i class="fa fa-anchor" aria-hidden="true"></i> Helpline
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle nav-links" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-bar-chart" aria-hidden="true"></i> Statistics
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{url_for('mentalhealth') }}"><i class="fa fa-users" aria-hidden="true"></i> People Affected By Depression</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{{url_for('suicideanalysis') }}"><i class="fa fa-users" aria-hidden="true"></i> People commiting Suicides</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav ">
+
+          <li class="nav-item">
+            <button type="button" class="btn btn-screening btn-grad" onclick="document.location='{{url_for('screening') }}'">Depression Screening</button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-screening btn-grad" onclick="document.location='{{url_for('analysis') }}'">Sentiment Analysis</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!---------------------- End of Navbar -------------------------->
+    <!------------------------ Top Heading -------------------------->
+    <div  class="mental_health_content">
+        <h1>EXPLORATORY ANALYSIS ON MENTAL HEALTH</h1>
+        <hr class="graphs-hr" noshade width="250">
+        <p> This is an analysis to see how the world compares in a variety of categories related to one's MENTAL HEALTH.<p>
+        <p> This is the result of the analysis performed on the data set, "survey.csv(kaggle)".<br> We must note that the folowing analysis is completely based on the survey alone and the actuality might vary.</p>
+
+    </div>
+    <!------------------------------- End of Top Heading ------------------------->
+    <!---------------------------------- Bar Graphs ------------------------------>
+    <div class="card-deck graph-card-deck">
+      <div class="card graphs-card ">
+        <img class="card-img-top card-images" src="{{url_for('static', filename='images/healthanalysis/age.png')}}" alt="Card image cap">
+        <div class="card-block">
+          <h5 class="graphs-card-title"><i class="fa fa-sort-numeric-desc" aria-hidden="true"></i> AGEWISE COUNT</h5>
+          <hr class="graphs-card-hr" noshade width="50">
+          <p class="graphs-card-content">Reviewing the above garph we can see that people between the age group of 30-40 are most likely to be affected where as the age group 20-30 is the next highest with not much of difference.</p>
+          <br>
+        </div>
+      </div>
+      <div class="card graphs-card ">
+        <img class="card-img-top card-images" src="{{url_for('static', filename='images/healthanalysis/malevsfemale.png')}}" alt="Card image cap">
+        <div class="card-block">
+          <h5 class="graphs-card-title"><i class="fa fa-male" aria-hidden="true"></i> MEN VS <i class="fa fa-female" aria-hidden="true"></i> WOMEN COUNT</h5>
+          <hr class="graphs-card-hr" noshade width="50">
+          <p class="graphs-card-content">According to this data set men suffer more than women, but we have to keep in mind all the plots are only from the dataset provided and the actuality may vary.</p>
+          <br>
+        </div>
+      </div>
+      <div class="card graphs-card ">
+        <img class="card-img-top card-images" src="{{url_for('static', filename='images/healthanalysis/interference.png')}}" alt="Card image cap">
+        <div class="card-block">
+          <h5 class="graphs-card-title"><i class="fa fa-briefcase" aria-hidden="true"></i> INTERFERENCE IN WORK/SCHOOL</h5>
+          <hr class="graphs-card-hr" noshade width="50">
+          <p class="graphs-card-content">From the above graph we can infer that having a mental disorder afftects people in their work or school life sometimes.</p>
+        </div>
+      </div>
+    </div>
+    <!---------------------------------End of Bar Graphs ----------------------->
+
+    <!---------------------------------- Pie Charts -------- -------------------->
+
+    <div class="card-deck graph-card-deck">
+      <div class="card graphs-card">
+        <img class="card-img-top card-images" src="{{url_for('static', filename='images/healthanalysis/treatment.png')}}" alt="Card image cap">
+        <div class="card-block">
+          <h5 class="graphs-card-title"><i class="fa fa-medkit" aria-hidden="true"></i> AVAILING TREATMENT</h5>
+          <hr class="graphs-card-hr" noshade width="50">
+          <p class="graphs-card-content">We can see that about 50% people dont avail any treatment, there can be multiple reasons like financial problem but the majority of the people avoid treatment due societal pressures.</p>
+        </div>
+      </div>
+      <div class="card graphs-card">
+        <img class="card-img-top card-images" src="{{url_for('static', filename='images/healthanalysis/familyhistory.png')}}" alt="Card image cap">
+        <div class="card-block">
+          <h5 class="graphs-card-title"><i class="fa fa-history" aria-hidden="true"></i> PRESENCE OF FAMILY HISTORY</h5>
+          <hr class="graphs-card-hr" noshade width="50">
+          <p class="graphs-card-content">Mental Disorder maybe present without any history in the family,about 61% of the people admitted had no history in the family. Anyone, anywhere can suffer from it.</p>
+        </div>
+      </div>
+      <div class="card graphs-card">
+        <img class="card-img-top card-images" src="{{url_for('static', filename='images/healthanalysis/tech.png')}}" alt="Card image cap">
+        <div class="card-block">
+          <h5 class="graphs-card-title"> <i class="fa fa-laptop" aria-hidden="true"></i> WORKING IN TECH</h5>
+          <hr class="graphs-card-hr" noshade width="50">
+          <p class="graphs-card-content">Majority of the people working int the tech industry suffer the most about 82%. This is the highest over any individual profession, this may be due to the competetivity of the industry and fear of loosing out.</p>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <!------------------------------- End of Pie Charts -------------------------->
+    <footer class="footer">
+      <div class="footer-btn-block">
+        <a href="/" class="footer-buttons" role="button"><i class="fa fa-home"></i> Home</a>&ensp;
+        <a href="{{url_for('gettoknow') }}" class="footer-buttons" role="button"><i class="fa fa-info-circle"></i> Get To Know</a>&ensp;
+        <a href="{{url_for('helpline') }}" class="footer-buttons" role="button"><i class="fa fa-anchor" aria-hidden="true"></i> Helpline</a>&ensp;
+      </div>
+
+      <img class="footer-image" src="{{url_for('static', filename='images/footerimage.jpg')}}">
+
+      <div class="copyright">
+          <p>&#169; Made by: <br>
+            <a href="https://www.linkedin.com/in/nuthakki-mithali-maryah-b254a1194" class="linkedin">Mithali Maryah</a><br>
+            <a href="https://www.linkedin.com/in/kalaipriya-balamurugan-0564841b4/" class="linkedin">Kalaipriya</a><br>
+            <a href="https://www.linkedin.com/in/sowmiya-veerapathiran-3182131ab"  class="linkedin">Sowmiya</a>
+          </p>
+      </div>
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

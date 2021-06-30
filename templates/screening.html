@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://use.fontawesome.com/26ab819582.js"></script>
+    <link rel="icon" href="logo.png" type="png" sizes="16x16">
+    <link href="{{url_for('static',filename='styles/style.css') }}" rel="stylesheet" type="text/css" />
+    <title> Screening test</title>
+
+
+
+</head>
+<body>
+    <!-- start Quiz button -->
+    <div class="start_btn">
+        <button>Start Quiz <br/><i class="fa fa-play" aria-hidden="true" style="font-size:35px"></i></button>
+
+    </div>
+
+    <!-- Info Box -->
+    <div class="info_box">
+        <div class="info-title"><span>Some Basic info on this Quiz</span></div>
+        <div class="info-list">
+            <div class="info">1. Once you select your answer, it can't be undone.</div>
+            <div class="info">2. You'll get points on the basis of your answers.</div>
+            <div class="info">3. Be as truthful as you can. Choose the first option that comes to your mind.</div>
+            <div class="info">4. There are a total of 12 questions.</div>
+            <div class="info">5. You must answer all the questions, only if you answer the question it will move to the next question</div>
+        </div>
+        <div class="buttons">
+            <button class="quit"><i class="fa fa-times-circle" aria-hidden="true"></i> Exit Quiz</button>
+            <button class="restart"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Continue</button>
+        </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+        <header>
+            <div class="title">Depression Screening</div>
+        </header>
+        <section>
+            <div class="que_text">
+                <!--  question from JavaScript -->
+            </div>
+            <div class="option_list">
+                <!--  options from JavaScript -->
+            </div>
+        </section>
+
+        <!-- footer of Quiz Box -->
+        <footer>
+            <div class="total_que">
+                <!--  Question Count Number from JavaScript -->
+            </div>
+            <button class="next_btn"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Next Question</button>
+        </footer>
+    </div>
+
+    <!-- Result Box -->
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">You've completed the Quiz!</div>
+        <div class="score_text">
+            <!--  Score Result from JavaScript -->
+        </div>
+        <div class="buttons">
+            <a href="{{url_for('index') }}"><i class="fa fa-home" aria-hidden="true"></i> Go To HOME</a>
+        </div>
+    </div>
+
+    <!-- Inside this JavaScript file I've inserted Questions and Options only -->
+    <script src="{{url_for('static',filename='js/question.js') }}"></script>
+    <!-- Inside this JavaScript file  Quiz Codes -->
+    <script src="{{url_for('static',filename='js/script.js') }}"></script>
+
+</body>
+</html>
